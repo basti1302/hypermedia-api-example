@@ -1,0 +1,20 @@
+{
+  "id": "<%= account.id %>",
+  "balance": <%= account.balance %>,
+  "@links": {
+    "self": {
+      "href": "<%= account.links.self.href %>"
+    },
+    "transactions": {
+      "href": "<%= account.links.transactions.href %>"
+    }
+  },
+  "@actions": {
+    "transfer": {
+      "title": "Transfer money to another account",
+      "type": "json",
+      "href": "<%= account.links.transfer.href %>",
+      "method": "POST",
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<%- include ../includes/header.ejs %>
+<div class="h-account">
+  <span class="account-id"><%= account.id %></span>
+  <div class="e-transaction-list">
+    <ul>
+    <% for (var transactionId in transactions) {
+         var transaction = transactions[transactionId];
+    %>
+      <li>
+        <a rel="transaction-detail" href="<%= transaction.links.self.href
+          %>"><span class="p-transaction-id"><%= transaction.id %></span></a>:
+        <span class="amount"><%= transaction.amount %></span>,
+        <span class="reference"><%= transaction.reference %></span>,
+        <span class="partner"><%= transaction.partner %></span>
+      </li>
+    <% } %>
+    </ul>
+    <form class="u-search-transactions"
+      action="<%= account.links.transactions.href %>"
+      method="get"
+    >
+      <input name="amount" type="number"></input>
+      <input name="partner" type="text"></input>
+      <input name="reference" type="text"></input>
+      <input type="submit" value="Search for Transaction" />
+    </form>
+  </div>
+</div>
+<%- include ../includes/footer.ejs %>

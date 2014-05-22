@@ -1,0 +1,42 @@
+{
+  "account_id": "<%= account.id %>",
+  "transactions": [
+  <% for (var transactionId in transactions) {
+       var transaction = transactions[transactionId];
+  -%>
+  {
+      "transaction_id": "<%= transaction.id %>",
+      "amount": <%= transaction.amount %>,
+      "reference": "<%= transaction.reference %>",
+      "partner": "<%= transaction.partner %>"
+      "@links": {
+        "self": {
+          "href": "<%= transaction.links.self.href %>",
+          "title": "Transaction details for transaction <%= transaction.id %>",
+        },
+      }
+    },
+  <% } -%>
+],
+  "@link-templates": {
+    "transaction-query": {
+      "template": "<%= account.links.transactions.href %>{?amount,partner,reference}",
+      "title": "Search for transactions",
+      "description": "Search for transactions.",
+      "parameters": [
+        {
+          "name": "amount",
+          "description": "Transferred amount"
+        },
+        {
+          "name": "partner",
+          "description": "Recipient or sender"
+        },
+        {
+          "name": "reference",
+          "description": "Reference text"
+        }
+      ]
+    }
+  }
+}

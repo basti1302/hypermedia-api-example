@@ -1,0 +1,14 @@
+{
+  "name": "hypermedia-js-example-code",
+  "version": "0.1.0",
+  "description": "Example Code for 'Implementing Hypermedia APIs with JavaScript' at JSUnconfEU 2014, Hamburg, Germany",
+  "repository": "https://github.com/basti1302/hypermedia-jsunconf.eu-2014.git",
+  "dependencies": {
+    "body-parser": "^1.0.2",
+    "ejs": "^1.0.0",
+    "express": "^4.0.0",
+    "gen-id": "^0.1.1",
+    "lodash": "^2.4.1",
+    "method-override": "^1.0.0"
+  }
+}

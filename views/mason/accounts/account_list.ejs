@@ -1,0 +1,15 @@
+{
+  "accounts": [
+<% for (var accountId in accounts) {
+       var account = accounts[accountId]; -%>
+    {
+      "account_id": "<%= account.id %>",
+      "@links": {
+        "self": {
+          "href": "<%= account.links.self.href %>"
+        }
+      }
+    },
+<% } -%>
+  ]
+}

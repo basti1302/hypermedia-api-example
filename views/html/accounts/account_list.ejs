@@ -1,0 +1,13 @@
+<%- include ../includes/header.ejs -%>
+<div class="h-account">
+  <div class="account-list">
+    <ul>
+    <% for (var accountId in accounts) {
+         var account = accounts[accountId];
+    -%>
+      <li><a rel="account" href="<%= account.links.self.href %>"><%= account.id %></a></li>
+    <% } -%>
+    </ul>
+  </div>
+</div>
+<%- include ../includes/footer.ejs -%>

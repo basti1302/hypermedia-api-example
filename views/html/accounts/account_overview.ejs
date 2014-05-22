@@ -1,0 +1,17 @@
+<%- include ../includes/header.ejs %>
+<div class="h-account">
+  <div class="e-account-overview">
+    <span class="p-account-id"><%= account.id %></span>
+    <span class="p-balance"><%= account.balance %></span>
+    <a rel="transactions" href="<%= account.links.transactions.href %>">Transactions</a>
+    <form class="transfer" action="<%= account.links.transfer.href %>" method="post">
+      <input name="amount" type="number"></input>
+      <input name="recipient" type="text"></input>
+      <input name="iban" type="number"></input>
+      <input name="bic" type="number"></input>
+      <input name="reference" type="text"></input>
+      <input type="submit" value="Transfer" />
+    </form>
+  </div>
+</div>
+<%- include ../includes/footer.ejs %>
